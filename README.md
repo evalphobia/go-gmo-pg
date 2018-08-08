@@ -15,6 +15,8 @@ go-gmo-pg
 [10]: https://coveralls.io/github/evalphobia/go-gmo-pg?branch=master
 [11]: https://codecov.io/github/evalphobia/go-gmo-pg/coverage.svg?branch=master
 [12]: https://codecov.io/github/evalphobia/go-gmo-pg?branch=master
+[13]: https://goreportcard.com/badge/github.com/evalphobia/go-gmo-pg
+[14]: https://goreportcard.com/report/github.com/evalphobia/go-gmo-pg
 [15]: https://img.shields.io/github/downloads/evalphobia/go-gmo-pg/total.svg?maxAge=1800
 [16]: https://github.com/evalphobia/go-gmo-pg/releases
 [17]: https://img.shields.io/github/stars/evalphobia/go-gmo-pg.svg
