@@ -94,6 +94,11 @@ func (r *ExecTranAuResponse) IsSuccess() bool {
 	return true
 }
 
+// HasErrorAuAcceptCodeNotFound checks if the error is non-existed accept code error or not.
+func (r *ExecTranAuResponse) HasErrorAuAcceptCodeNotFound() bool {
+	return r.BaseResponse.HasErrorDetails(client.ErrAuAcceptCodeNotFound)
+}
+
 // ValidateCheckString validates CheckString to avoid falsification.
 func (r *ExecTranAuResponse) ValidateCheckString(accessID, shopID, shopPass string) bool {
 	return client.ValidateCheckString(r.CheckString, r.OrderID, accessID, shopID, shopPass)
