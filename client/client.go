@@ -8,7 +8,8 @@ import (
 )
 
 const (
-	endpointBase = "https://pt01.mul-pay.jp"
+	endpointSandbox    = "https://pt01.mul-pay.jp"
+	endpointProduction = "https://p01.mul-pay.jp"
 )
 
 // Client is base struct for GMO Payment Gateway API.
@@ -30,7 +31,10 @@ func (c Client) Call(path string, param interface{}, result interface{}) error {
 		Common: c,
 		Extra:  param,
 	}
-	return request.CallPOST(fmt.Sprintf("%s%s", endpointBase, path), p, c.Option, result)
+	if c.Config.IsProduction() {
+		return request.CallPOST(fmt.Sprintf("%s%s", endpointProduction, path), p, c.Option, result)
+	}
+	return request.CallPOST(fmt.Sprintf("%s%s", endpointSandbox, path), p, c.Option, result)
 }
 
 type parameter struct {
