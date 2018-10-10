@@ -76,7 +76,9 @@ func (svc ExecTranAuContinuance) ToSjis() (ExecTranAuContinuance, error) {
 	if err != nil {
 		return sjisData, err
 	}
-	sjisData.Commodity, err = client.ConvertUtf8ToSjis(client.ConvertToFullWidth(svc.Commodity))
+
+	commodity := trimCommodityUnderLimit(svc.Commodity)
+	sjisData.Commodity, err = client.ConvertUtf8ToSjis(client.ConvertToFullWidth(commodity))
 	if err != nil {
 		return sjisData, err
 	}
