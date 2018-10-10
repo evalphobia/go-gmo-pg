@@ -99,6 +99,21 @@ func (r *ExecTranAuResponse) HasErrorAuAcceptCodeNotFound() bool {
 	return r.BaseResponse.HasErrorDetails(client.ErrAuAcceptCodeNotFound)
 }
 
+// HasErrorAuInvalidUser checks if the error is invalid user error or not.
+func (r *ExecTranAuResponse) HasErrorAuInvalidUser() bool {
+	return r.BaseResponse.HasErrorDetails(client.ErrAuInvalidUser)
+}
+
+// HasErrorAuInvalidCard checks if the error is invalid card error or not.
+func (r *ExecTranAuResponse) HasErrorAuInvalidCard() bool {
+	return r.BaseResponse.HasErrorDetails(client.ErrAuInvalidCard)
+}
+
+// HasErrorAuExceedAmountLimit checks if the error is over limit error or not.
+func (r *ExecTranAuResponse) HasErrorAuExceedAmountLimit() bool {
+	return r.BaseResponse.HasErrorDetails(client.ErrAuExceedAmountLimit)
+}
+
 // ValidateCheckString validates CheckString to avoid falsification.
 func (r *ExecTranAuResponse) ValidateCheckString(accessID, shopID, shopPass string) bool {
 	return client.ValidateCheckString(r.CheckString, r.OrderID, accessID, shopID, shopPass)
