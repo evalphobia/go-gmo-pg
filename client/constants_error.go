@@ -6,4 +6,6 @@ const (
 	ErrAuInvalidUser             = "AMPL30026"
 	ErrAuExceedAmountLimit       = "AMPL40104"
 	ErrAuInvalidCard             = "AMPL40505"
+
+	ErrAuSettlementFailed = "AU1000007"
 )
